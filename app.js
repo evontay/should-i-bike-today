@@ -47,15 +47,16 @@ $(document).ready(function () {
         $('#verdict').html('<h1>Boo. Maybe not.</h1>')
       }
       else {
-        $('#verdict').html("<h1>It's a wonderful day. Grab your bike!</h1>")
+        $('#verdict').html("<h1>Yes. Grab your bike!</h1>")
       }
     })
   }).fail(function (jqXHR, textStatus, errorThrown) {
     console.log(errorThrown)
   })
 
-  badWeather => {
+  function badWeather(){
     $('#forecast:contains(Thunder), :contains(Rain), :contains(Shower), :contains(Drizzle)')
+    return true;
   }
   // $.ajax({
   //   url: 'https://api.data.gov.sg/v1/environment/24-hour-weather-forecast'
