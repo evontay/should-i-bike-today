@@ -1,6 +1,6 @@
 # should-i-bike-today
-link: https://evontay.github.io/should-i-bike-today/
-A simple exercise to consume a public API, creating an info page for myself to check whether it is a suitable day to bike based on the local 24-hr weather forecast.
+- link: https://evontay.github.io/should-i-bike-today/
+- A simple exercise to consume a public API, creating an info page for myself to check whether it is a suitable day to bike based on the local 24-hr weather forecast.
 
 ### Technology used
 - HTML/CSS
