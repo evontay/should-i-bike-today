@@ -42,6 +42,10 @@ $(document).ready(function () {
       $('#forecast').append('<p>' + datum.general.forecast + '</p>')
       console.log('forecast:' + datum.general.forecast)
 
+      $('#morning').append('<h5>morning</h5> <p>' + datum.general.forecast + '</p>')
+
+      $('#evening').append('<h5>evening</h5> <p>' + datum.general.forecast + '</p>')
+
       if (badWeather) {
         $('body').css('background-color', '#555')
         $('#verdict').html('<h1>Boo. Maybe not.</h1>')
@@ -67,19 +71,19 @@ $(document).ready(function () {
   //   console.log('now: ' + now)
   // })
 
-  function reload () {
-    $('#main').empty()
-    $.get('https://api.data.gov.sg/v1/environment/24-hour-weather-forecast')
-    .done(function (data) {
-      // console.log('test: ' + response)
-      data.forEach(function (datum) {
-        $('#main').append('<p>' + datum + '</p>')
-        console.log('datum:' + datum)
-      })
-    }).fail(function (jqXHR, textStatus, errorThrown) {
-      console.log(errorThrown)
-    })
-  }
+  // function reload () {
+  //   $('#main').empty()
+  //   $.get('https://api.data.gov.sg/v1/environment/24-hour-weather-forecast')
+  //   .done(function (data) {
+  //     // console.log('test: ' + response)
+  //     data.forEach(function (datum) {
+  //       $('#main').append('<p>' + datum + '</p>')
+  //       console.log('datum:' + datum)
+  //     })
+  //   }).fail(function (jqXHR, textStatus, errorThrown) {
+  //     console.log(errorThrown)
+  //   })
+  // }
   // //
   // // Refresh the data
   // $('#refresh').click(function () {

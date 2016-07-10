@@ -2,19 +2,43 @@ body {
   background-color: skyblue;
   text-align: center;
   color: white;
+  background-size: cover;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
 }
 
 h1 {
   font-family: 'Fredoka One';
-  font-size: 5em;
+  font-size: 3em;
   text-align: center;
   color: white;
   margin: 50px;
   line-height: 1.1;
 }
 
+h3 {
+  font-family: 'Fredoka One';
+  font-size: 1em;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+
+
+.underline {
+  text-decoration: underline;
+}
+
+
+
 #date {
   margin-top: 30px;
+  font-family: 'Ubuntu Condensed', sans-serif;
+  font-size: 1.2em;
+  letter-spacing: 2px;
 }
 
 button {
@@ -22,8 +46,34 @@ button {
 }
 
 p {
-  font-family: 'Georgia';
-  font-size: 1.8em;
+  font-family: 'Ubuntu Condensed', sans-serif;
+  font-size: 1.2em;
   text-align: center;
+}
 
+.wrap {
+  display: flex;
+  flex-direction: row;
+  min-height: 100px;
+  width: 70%;
+  margin: 50px auto;
+  opacity: 0.5;
+
+}
+
+#morning {
+  flex:1;
+  border-right: dotted white 3px;
+  padding: 15px 20px;
+  p {
+    margin: 30px auto;
+  }
+}
+
+#evening {
+  flex:1;
+  padding: 15px 20px;
+  p {
+    margin: 30px auto;
+  }
 }
