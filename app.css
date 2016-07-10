@@ -1,6 +1,7 @@
 body {
   background-color: skyblue;
   text-align: center;
+  color: white;
 }
 
 h1 {
@@ -12,14 +13,17 @@ h1 {
   line-height: 1.1;
 }
 
+#date {
+  margin-top: 30px;
+}
+
 button {
   margin: 20px;
 }
 
 p {
-  font-family: 'Georgia'
-  font-size: 3em;
+  font-family: 'Georgia';
+  font-size: 1.8em;
   text-align: center;
-  color: chocolate;
 
 }
