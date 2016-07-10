@@ -1,0 +1,25 @@
+body {
+  background-color: skyblue;
+  text-align: center;
+}
+
+h1 {
+  font-family: 'Fredoka One';
+  font-size: 5em;
+  text-align: center;
+  color: white;
+  margin: 50px;
+  line-height: 1.1;
+}
+
+button {
+  margin: 20px;
+}
+
+p {
+  font-family: 'Georgia'
+  font-size: 3em;
+  text-align: center;
+  color: chocolate;
+
+}
