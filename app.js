@@ -42,16 +42,18 @@ $(document).ready(function () {
       $('#forecast').append('<p>' + datum.general.forecast + '</p>')
       console.log('forecast:' + datum.general.forecast)
 
-      $('#morning').append('<h5>morning</h5> <p>' + datum.general.forecast + '</p>')
+      $('#morning').append('<h3 class="underline">morning</h3> <p>' + datum.periods[1].regions.south + '</p>')
 
-      $('#evening').append('<h5>evening</h5> <p>' + datum.general.forecast + '</p>')
+      $('#evening').append('<h3 class="underline">evening</h3> <p>' + datum.periods[2].regions.south + '</p>')
 
       if (badWeather) {
         $('body').css('background-color', '#555')
+        $('#icon').html('<i class="wi wi-rain"></i>')
         $('#verdict').html('<h1>Boo. Maybe not.</h1>')
       }
       else {
         $('#verdict').html("<h1>Yes. Grab your bike!</h1>")
+        $('#icon').html('<i class="wi wi-sunny"></i>')
       }
     })
   }).fail(function (jqXHR, textStatus, errorThrown) {
@@ -62,6 +64,16 @@ $(document).ready(function () {
     $('#forecast:contains(Thunder), :contains(Rain), :contains(Shower), :contains(Drizzle)')
     return true;
   }
+
+  // function showIconMorning() {
+  //   $('#morning:contains(Thunder), :contains(Rain), :contains(Shower), :contains(Drizzle)').append('<i class="wi wi-day-rain"></i>')}
+  //   else {
+  //     $('#morning')append('<i class="wi wi-sunny"></i>'
+  //   }}
+  //
+  //   $('#evening:contains(Thunder), :contains(Rain), :contains(Shower), :contains(Drizzle)').append('<i class="wi wi-day-rain"></i>')
+  //
+  // }
   // $.ajax({
   //   url: 'https://api.data.gov.sg/v1/environment/24-hour-weather-forecast'
   // }).done (function (data) {

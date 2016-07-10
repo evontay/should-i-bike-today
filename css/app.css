@@ -1,8 +1,12 @@
 body {
+  /*background: url(./img/bike.gif) no-repeat center center fixed;*/
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
   background-color: skyblue;
   text-align: center;
   color: white;
-  background-size: cover;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -15,7 +19,7 @@ h1 {
   font-size: 3em;
   text-align: center;
   color: white;
-  margin: 50px;
+  margin-top: 50px;
   line-height: 1.1;
 }
 
@@ -26,13 +30,18 @@ h3 {
   text-transform: uppercase;
 }
 
-
+#icon {
+  font-size: 3em;
+  margin: 25px auto;
+}
 
 .underline {
   text-decoration: underline;
 }
 
-
+#main {
+  padding-top: 20px;
+}
 
 #date {
   margin-top: 30px;
@@ -49,7 +58,11 @@ p {
   font-family: 'Ubuntu Condensed', sans-serif;
   font-size: 1.2em;
   text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
+
+
 
 .wrap {
   display: flex;
