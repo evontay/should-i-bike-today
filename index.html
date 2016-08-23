@@ -18,25 +18,33 @@
   <div id="date"></div>
   <h1>Should I bike today?</h1>
 
-<div id="main">
-  <h3 class="underline">Today's weather</h3>
-<div id="icon"><i class="wi wi-day-sunny"></i></div>
+  <div id="main">
+    <h3><span class="underline">Today's weather</span></h3>
+  <div id="icon"><i class="wi wi-day-sunny"></i></div>
 
-  <div id="forecast"></div>
+    <div id="forecast"></div>
 
-  <div class="wrap">
-    <div id="morning">
-      <div id="icon"></div>
+    <div class="wrap">
+      <div id="morning">
+        <div id="icon"></div>
+      </div>
+      <div id="evening">
+        <div id="icon"></div>
+      </div>
     </div>
-    <div id="evening">
-      <div id="icon"></div>
+
+    <div id="verdict">
     </div>
+    <h5>Or maybe just fucking look out of the window, Evon. Geez.</h5>
   </div>
 
-  <div id="verdict">
-  </div>
-
-</div>
+  <footer>
+    <h2>Info</h2>
+    <p>Should I bike Today is based on the 24-hour weather forecast API provided by <a href="https://data.gov.sg/">Data.gov.sg</a> </p>
+    <p><span class="fred">Today's Weather:</span> 24 hour general forecast.
+    <p><span class="fred">Morning weather:</span> 8am-10am forecast in the Eastern region of Singapore where I reside.</p>
+    <p><span class="fred">Evening weather:</span> 6-8pm forecast in the Southern region of Singapore where my school is located.</p>
+  </footer>
 
 
 <script src="./app.js"></script>

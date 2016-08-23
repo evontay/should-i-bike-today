@@ -5,10 +5,10 @@
 ### Technology used
 - HTML/CSS
 - Javascript
-- ajax
+- Ajax
 - jquery
 - Weather icons: https://erikflowers.github.io/weather-icons/
 
 ### API
 - 24 Hour Weather Forecast by data.gov.sg
-- https://developers.data.gov.sg/datagovsg-apis/apis/get/environment/24-hour-weather-forecast
+-  https://developers.data.gov.sg/datagovsg-apis/apis/get/environment/24-hour-weather-forecast
