@@ -60,6 +60,13 @@ h5 {
   letter-spacing: 2px;
 }
 
+#forecast h1 {
+  font-family: 'Ubuntu Condensed', sans-serif;
+  margin-top: 30px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
 button {
   margin: 20px;
 }
@@ -110,8 +117,9 @@ footer {
 }
 
 footer a {
-  text-decoration: none;
-  color: #cbc8c8;
+  text-decoration:underline;
+  color: white;
+  font-weight: 800;
 }
 
 footer a:hover {

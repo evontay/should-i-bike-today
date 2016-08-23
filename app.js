@@ -19,7 +19,7 @@ console.clear()
 //   CHANGE BACKGROUND IMAGE TO RAINY GIF
 //   DISPLAY TEXT 'BOO. MAYBE NOT.'
 //   DISPLAY FORECAST
-
+var theWeather
 $(document).ready(function () {
   console.log('ready?')
   var settings = {
@@ -37,91 +37,41 @@ $(document).ready(function () {
     data.items.map(function (datum) {
       $('#date').append(datum.timestamp)
       console.log('timestamp:' + datum.timestamp)
+      testWeather = 'fine'
+      theWeather = datum.general.forecast.toLowerCase()
+      morningWeather = datum.periods[1].regions.east
+      eveningWeather = datum.periods[2].regions.south
+      // $('#forecast').append('<h1>' + datum.general.forecast + '</h1>')
+      // // $('#forecast').append('<p>Fine</p>')
+      // console.log('forecast:' + datum.general.forecast)
 
-      $('#forecast').append('<p>' + datum.general.forecast + '</p>')
-      // $('#forecast').append('<p>Fine</p>')
-      console.log('forecast:' + datum.general.forecast)
+      // $('#morning').append('<h3 class="underline">morning</h3> <p>' + datum.periods[1].regions.east + '</p>')
+      //
+      // $('#evening').append('<h3 class="underline">evening</h3> <p>' + datum.periods[2].regions.south + '</p>')
 
-      $('#morning').append('<h3 class="underline">morning</h3> <p>' + datum.periods[1].regions.south + '</p>')
+      $('#forecast').append('<h1>' + theWeather + '</h1>')
 
-      $('#evening').append('<h3 class="underline">evening</h3> <p>' + datum.periods[2].regions.south + '</p>')
+      $('#morning').append('<h3 class="underline">morning</h3> <p>' + morningWeather + '</p>')
 
-      if (badWeather()) {
-        // $('body').css('background-color', '#555')
-        $('#icon').html('<i class="wi wi-rain"></i>')
-        $('#verdict').html('<h1>Boo. Maybe not.</h1>')
-      }else {
-        $('#verdict').html('<h1>Yes. Grab your bike!</h1>')
-        $('#icon').html('<i class="wi wi-day-sunny-overcast"></i>')
-      }
+      $('#evening').append('<h3 class="underline">evening</h3> <p>' + eveningWeather + '</p>')
+
+      badWeather()
     })
   }).fail(function (jqXHR, textStatus, errorThrown) {
     console.log(errorThrown)
   })
 
   function badWeather () {
-    $('#forecast:contains(Thunder), :contains(Rain), :contains(Shower), :contains(Drizzle)').css('background-color', 'grey')
-    return true
-
-    // function badMorning(){
-    //   if ($('#morning:contains(Thunder), :contains(Rain), :contains(Shower), :contains(Drizzle)')){
-    //     $('#morning').css('background-color', 'black')
-    //   }
-
-  // function badEvening(){
-  // $('#evening:contains(Thunder), :contains(Rain), :contains(Shower), :contains(Drizzle)').css("background-color", "grey")
-  // return true
+    console.log('theWeather: ' + theWeather)
+    if (theWeather.indexOf('thunder') >= 0 || theWeather.indexOf('shower') >= 0 || theWeather.indexOf('rain') >= 0) {
+      $('body').css('background-color', '#555')
+      $('#icon').html('<i class="wi wi-rain"></i>')
+      $('#verdict').html('<h1>Boo. Maybe not.</h1>')
+    } else {
+      $('#icon').html('<i class="wi wi-day-sunny-overcast"></i>')
+      $('#verdict').html('<h1>Yes. Grab your bike!</h1>')
+    }
   }
 
-  // function showIconMorning() {
-  //   $('#morning:contains(Thunder), :contains(Rain), :contains(Shower), :contains(Drizzle)').append('<i class="wi wi-day-rain"></i>')}
-  //   else {
-  //     $('#morning')append('<i class="wi wi-sunny"></i>'
-  //   }}
-  //
-  //   $('#evening:contains(Thunder), :contains(Rain), :contains(Shower), :contains(Drizzle)').append('<i class="wi wi-day-rain"></i>')
-  //
-  // }
-  // $.ajax({
-  //   url: 'https://api.data.gov.sg/v1/environment/24-hour-weather-forecast'
-  // }).done (function (data) {
-  //   var now = data.map(function (response) {
-  //     return response
-  //   })
-  //   console.log('now: ' + now)
-  // })
-
-// function reload () {
-//   $('#main').empty()
-//   $.get('https://api.data.gov.sg/v1/environment/24-hour-weather-forecast')
-//   .done(function (data) {
-//     // console.log('test: ' + response)
-//     data.forEach(function (datum) {
-//       $('#main').append('<p>' + datum + '</p>')
-//       console.log('datum:' + datum)
-//     })
-//   }).fail(function (jqXHR, textStatus, errorThrown) {
-//     console.log(errorThrown)
-//   })
-// }
-// //
-// // Refresh the data
-// $('#refresh').click(function () {
-//   reload()
-// })
-// // Submit new entry to api
-// $('#myForm').on('submit', function (event) {
-//   event.preventDefault()
-//   var data = $(this).serialize()
-//   console.log('submit: ' + data)
-//   $.ajax({
-//     type: 'POST',
-//     url: 'http://api.doughnuts.ga/doughnuts',
-//     data: data
-//   }).done (function (response) {
-//     $('#main').append('<p>' + $('#a').val() + ' - ' + $('#b').val() + ' <button>DELETE</button></p>')
-//   }).fail(function (jqXHR, textStatus, errorThrown) {
-//     console.log(errorThrown)
-//   })
 // })
 })
